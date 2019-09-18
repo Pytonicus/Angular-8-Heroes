@@ -1,0 +1,13 @@
+<h1>Resultados de la búsqueda: <small>{{termino}}</small></h1>
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados con el término: {{termino}}
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+    <!-- Ahora tenemos que utilizar la propiedad index que hemos creado en el servicio sacada del bucle for: -->
+    <app-heroe-tarjeta [heroe]="heroe" [index]="heroe.index" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
+</div>
